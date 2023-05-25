@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Autor: Victor Stala
+1. Crea un documento XML que represente un pedido a una hamburguesería. La información
+contenida es: nombre del cliente, dirección de entrega, una lista de productos que incluya el nombre
+y el precio. Por cada producto, incluye un atributo que contenga el número de productos.
+Realiza un DTD externo que valide el formato del documento XML-->
+<!DOCTYPE pedido SYSTEM "ejercicio1.dtd">
+<pedido>
+    <cliente>
+        <nombre>Antonio</nombre>
+        <direccion>C/ Machado 19</direccion>
+    </cliente>
+    <lista>
+        <producto>
+            <nombre>Big Long Chicken</nombre>
+            <precio>8,99</precio>
+            <cantidad>1</cantidad>
+        </producto>
+        <producto>
+            <nombre>Triple Bacon</nombre>
+            <precio>10,99</precio>
+            <cantidad>1</cantidad>
+        </producto>
+    </lista>
+</pedido>

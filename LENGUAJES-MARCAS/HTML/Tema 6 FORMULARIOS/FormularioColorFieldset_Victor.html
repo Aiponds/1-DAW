@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Color Fieldset</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sablevector/sablevector1610/sablevector161000334/63747616-ilustraci%C3%B3n-vectorial-de-confucio-icono-de-la-religi%C3%B3n-silueta-estilo-plano-.jpg">
+    <style>
+        h1,h2 {color: darkred;}
+        td.texto {border: 1px solid black; background-color: olive; color: white; font-weight: bold; text-align: center; padding: 2px;}
+        .verde {background-color:rgb(128, 206, 128);}
+        legend, label {font-weight: bold;}
+    </style>
+</head>
+<body>
+    <h1>FORMULARIO QUE SE ABRE A SI MISMO</h1>
+    <form action="" autocomplete="on">
+        <fieldset>
+            <legend>Datos básicos</legend>
+            <table>
+                <tr>
+                    <td class="texto"><label for="nombre">Nombre:(*)</label></td>
+                    <td><input type="text" name="nombre" id="nombre" required autofocus size="20" max="40"></td>
+                </tr>
+                <tr>
+                    <td class="texto"><label for="apellidos">Apellidos:(*)</label></td>
+                    <td><input type="text" name="apellidos" id="apellidos" required size="20" max="40"></td>
+                </tr>
+                <tr>
+                    <td class="texto"><label for="correo">Correo electrónico:(*)</label></td>
+                    <td><input type="email" name="correo" id="correo" required placeholder="......@......."></td>
+                </tr>
+                <tr>
+                    <td class="texto"><label for="poblacion">Población:</label></td>
+                    <td><input type="text" name="poblacion" id="poblacion" size="20" max="40"></td>
+                </tr>
+                <tr>
+                    <td class="texto"><label for="provincia">Provincia:</label></td>
+                    <td><input type="text" name="provincia" id="provincia" size="20" max="40"></td>
+                </tr>
+            </table>
+            <h2>(Campos con asterisco son campos obligatorios)</h2>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Adicionales</legend>
+            <table class="verde" style="width: 100%">
+                <tr>
+                    <td class="texto" style="width: 30%;"><label for="edad">Edad:</label></td>
+                    <td class="texto" style="width: 20%;">Cómo nos conociste?</td>
+                </tr>
+                <tr>
+                    <td><br>
+                        <input type="radio" name="edad" id="edad"><label for="edad">0-20</label>
+                        <input type="radio" name="edad" id="edad"><label for="edad">20-40</label>
+                        <input type="radio" name="edad" id="edad"><label for="edad">40-60</label>
+                        <input type="radio" name="edad" id="edad"><label for="edad">60-100</label>
+                    </td>
+                    <td><br>
+                        <input type="radio" name="conocer" id="conocer"><label for="conocer">A través de un amigo.</label><br>
+                        <input type="radio" name="conocer" id="conocer"><label for="conocer">A través de un buscador</label><br>
+                        <input type="radio" name="conocer" id="conocer"><label for="conocer">Navegando por la red</label><br>
+                        <input type="radio" name="conocer" id="conocer"><label for="conocer">Otros</label><br><br>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+        <fieldset>
+            
+            <legend>Datos Complementarios</legend>
+            <table style="width: 100%">
+                <tr>
+                    <td><label for="opinion">Opinion sobre nuestra pagina web</label><br></td>
+                    <td><label for="sugerencia">Tiene alguna sugerencia...</label></td>
+                </tr>
+                <tr>
+                    <td><textarea name="opinion" id="opinion" cols="40" rows="5"></textarea></td>
+                    <td><textarea name="sugerencia" id="sugerencia" cols="40" rows="5"></textarea></td>
+                </tr>
+            </table>
+            <label for="navegar">Cuánto navegas por Internet? (Señala la opción que más se acerque)</label><br>
+            <select name="navegar" id="navegar" size="2">
+                <option value="2">2 horas al dia</option>
+                <option value="4">4 horas al dia</option>
+                <option value="10">10 horas a la semana</option>
+                <option value="20">20 horas al mes</option>
+            </select><br><br>
+            <div class="verde"><br>
+                <input type="submit" value="Enviar formulario" style="margin-left: 20%;">
+                <input type="reset" value="Borrar formulario" style="margin-left: 45%;">
+                <br><br>
+            </div>
+          </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://thumbs.dreamstime.com/b/l%C3%ADnea-lista-hecha-de-verificaci%C3%B3n-del-icono-121978494.jpg">
+    <title>ListaComplejaAnidada</title>
+    <style>
+        .negrita {font-weight: bold; font-style: normal;}
+        .cursiva {font-style: italic;}
+        li {font-style: normal;}
+        ul.nocirculo {list-style-type: none;}
+        a {color: blue;}
+    </style>
+</head>
+<body>
+    <h1>Menú</h1>
+    <ul>
+        <li>Inicio</li>
+        <li class="negrita">Noticias 
+            <ul>
+                <li><a href="">Recientes</a></li>
+                <li><a href="" class="negrita">Más leídas</a></li>
+                <li><a href="">Más valoradas</a></li>
+            </ul>
+        </li>
+        <li>Artículos
+            <ol>
+                <li class="negrita">XHTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Otros</li>
+            </ol>
+        </li>
+        <li>Contacto</li>
+    </ul>
+    <ul class="nocirculo">
+        <li class="cursiva">Email
+            <ul class="nocirculo">
+                <li class="negrita">nombre@direccion.com</li>
+            </ul>
+        </li>
+        <li class="cursiva">Teléfono
+            <ul class="nocirculo">
+                <li>900 900 900</li>
+            </ul>
+        </li>
+        <li class="cursiva">Fax
+            <ul class="nocirculo">
+                <li>900 900 900</li>
+            </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>

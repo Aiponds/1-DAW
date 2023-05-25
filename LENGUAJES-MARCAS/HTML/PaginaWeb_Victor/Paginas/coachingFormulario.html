@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching</title>
+    <link rel="stylesheet" href="../indice.css">
+    <link rel="icon" href="../Imagenes/logo.png">
+</head>
+
+<body>
+    <a id="inicio"></a>
+    <header>
+        <div class="imagenLogo">
+            <figure>
+                <a href="../index.html">
+                    <img src="../Imagenes/logo.png" alt="Logo" class="formatoImagen">
+                </a>
+            </figure>
+        </div>
+        <div class="menu">
+            <ul>
+                <a href="../index.html#inicio">
+                    <li>Inicio</li>
+                </a>
+                <a href="../index.html#guias">
+                    <li>Guías</li>
+                </a>
+                <a href="../index.html#campeones">
+                    <li>Campeones</li>
+                </a>
+                <a href="../Paginas/coachingFormulario.html">
+                    <li>Coaching</li>
+                </a>
+                <a href="https://www.reddit.com/r/leagueoflegends/" target="_blank">
+                    <li>Foro</li>
+                </a>
+                <a href="./coachingFormulario.html#pie">
+                    <li>Contacto</li>
+                </a>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <h1><span>Formulario Coaching</span> </h1>
+        </nav>
+        <article class="coaching">
+            <section>
+                <form action="../formulario.php" method="post" autocomplete="on">
+
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        <table>
+                            <th colspan="2">Campos con asterisco son requeridos para enviar</th>
+                            <tr>
+                                <td class="izq"><label for="nombre">Nombre(*): </label></td>
+                                <td class="der"><input type="text" name="nombre" id="nombre" class="largo" required
+                                        autofocus placeholder="Introduce tu nombre..."></td>
+                            </tr>
+                            <tr>
+                                <td class="izq"><label for="apellidos">Apellidos(*): </label></td>
+                                <td class="der"><input type="text" name="apellidos" id="nombre" class="largo" required
+                                        placeholder="Introduce tus apellidos..."></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="izq2">
+                                    <input type="radio" name="genero" id="masc">
+                                    <label for="masc">Masculino</label>
+                                    <input type="radio" name="genero" id="fem">
+                                    <label for="fem">Femenino</label>
+                                    <input type="radio" name="genero" id="otro">
+                                    <label for="otro">Otro</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="izq"><label for="edad">Edad: </label></td>
+                                <td class="der"><input type="number" name="edad" id="edad" style="width: 4%;"
+                                        placeholder="18.." min="0" max="120"></td>
+                            </tr>
+                            <tr>
+                                <td class="izq"><label for="email">Email(*): </label></td>
+                                <td class="der"><input type="email" name="email" id="email" required class="largo"
+                                        placeholder="tuemail@dominio.com"></td>
+                            </tr>
+                            <tr>
+                                <td class="izq"><label for="tlfn">Telefono: </label></td>
+                                <td class="der"><input type="tel" name="tlfn" id="tlfn" class="largo"
+                                        placeholder="657890123..." minlength="9" maxlength="9"></td>
+                            </tr>
+                            <tr>
+                                <td class="izq"><label for="color">Color preferido: </label></td>
+                                <td class="der"><input type="color" name="color" id="color" class="sinPadding"></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Datos de reserva</legend>
+                        <table>
+                            <th colspan="2">Campos con asterisco son requeridos para enviar</th>
+                            <tr>
+                                <td class="izq"><label for="motivo">Motivo(*): </label></td>
+                                <td class="der"><textarea name="motivo" id="motivo" cols="60" rows="10" required
+                                        minlength="40"
+                                        placeholder="Describe brevemente el motivo por el cual requieres de coaching..."></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="izq"><label for="elo">Elo actual(*): </label></td>
+                                <td class="der">
+                                    <select name="elo" id="elo" required>
+                                        <option value="hierro">Hierro</option>
+                                        <option value="bronce">Bronce</option>
+                                        <option value="plata">Plata</option>
+                                        <option value="oro">Oro</option>
+                                        <option value="platino">Platino</option>
+                                        <option value="diamante">Diamante</option>
+                                        <option value="maestro">Maestro</option>
+                                        <option value="grandmaster">Gran-Maestro</option>
+                                        <option value="aspirante">Aspirante</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="izq"><label for="fecha">Fecha a reservar(*): </label></td>
+                                <td class="der"><input type="date" name="fecha" id="fecha" required></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="izq2"><input type="checkbox" name="correos" id="correos"><label
+                                        for="correos">Quiero suscribirme a las notificaciones por correo.</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="izq2"><input type="checkbox" name="politicas" id="politicas"
+                                        required><label for="politicas">Acepto las <a href="../Paginas/politicas.html"
+                                            target="_blank">
+                                            Políticas de uso y servicio.</a></label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="botones"><input type="submit" value="Enviar datos"><input
+                                        type="reset" value="Reestablecer"></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>
+                    <figure>
+                        <a href="https://www.youtube.com/channel/UCwpQSspQfo5AJHxKZkBRXQA" target="_blank"><img
+                                src="../Imagenes/youtube.png" alt="" class="piePagina"></a>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <a href="https://twitter.com/aiponds" target="_blank"><img src="../Imagenes/twitter.png" alt=""
+                                class="piePagina"></a>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <a href="https://www.instagram.com/aiponds_/" target="_blank"><img
+                                src="../Imagenes/instagram.png" alt="" class="piePagina"></a>
+                    </figure>
+                </td>
+            </tr>
+        </table>
+        <a id="pie"></a>
+        <p>Autor: Victor Stala 1º Desarrollo de Aplicaciones Web</p>
+        <br>
+        <figure>
+            <a href="https://i.redd.it/xioo6xlfd6r91.jpg"><img src="../Imagenes/guillem.png" alt=""
+                    class="piePagina"></a>
+        </figure>
+        <p>© 2023-2023 Lolpedia no está respaldada por Riot Games ni League of Legends y no refleja la vista o opiniones
+            de Riot Games o cualquiera oficialmente involucrado en producir o gestionar League of Legends. League of
+            Legends y Riot Games son una marca o marcas oficiales de Riot Games, Inc. League of Legends © Riot Games,
+            Inc.</p>
+        <p>Todo el contenido que se pueda encontrar en esta página está con fines educativos y no personales ni
+            comerciales. Todos los derechos de las imagenes atribuidas a sus respectivos autores.</p>
+        <br>
+        <p>Bibliografía: W3docs, W3school, StackOverflow y FreeCodeCamp</p>
+    </footer>
+</body>
+
+</html>

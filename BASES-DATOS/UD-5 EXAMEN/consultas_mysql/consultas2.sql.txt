@@ -1,0 +1,309 @@
+﻿USE Jardineria;
+
+select '1. Obtener el nombre del cliente con mayor límite de crédito'
+AS '-----------------------------------------------------------------';
+SELECT NombreCliente
+FROM Clientes
+WHERE LimiteCredito = (SELECT max(LimiteCredito) FROM Clientes);
+
+select '2. Obtener el nombre, apellido1 y puesto de los empleados que no representen a ningún cliente'
+AS '-----------------------------------------------------------------';
+SELECT Nombre, Apellido1, Puesto
+FROM Empleados
+WHERE CodigoEmpleado NOT IN (SELECT CodigoEmpleadoRepVentas FROM Clientes);
+
+select '3. Obtener el nombre del producto más caro'
+AS '-----------------------------------------------------------------';
+SELECT Nombre
+FROM Productos
+WHERE PrecioVenta = (SELECT max(PrecioVenta) FROM Productos);
+
+select '4. Obtener el nombre del producto del que más unidades se hayan vendido en un mismo pedido'
+AS '-----------------------------------------------------------------';
+SELECT Nombre
+FROM Productos
+WHERE CodigoProducto = (SELECT CodigoProducto
+                          FROM DetallePedidos
+                          WHERE Cantidad=(SELECT max(Cantidad)
+                                          FROM DetallePedidos));
+
+select '5. Obtener los clientes cuya línea de crédito sea mayor que los pagos que haya realizado'
+AS '-----------------------------------------------------------------';
+SELECT NombreCliente, LimiteCredito, sum(Cantidad) AS TotalPagos
+FROM Clientes,Pagos
+WHERE Clientes.CodigoCliente = Pagos.CodigoCliente
+GROUP BY Clientes.CodigoCliente
+HAVING LimiteCredito > TotalPagos;
+
+select '6. Sacar el producto que más unidades tiene en stock y el que menos unidades tiene en stock'
+AS '-----------------------------------------------------------------';
+SELECT Nombre
+FROM Productos
+WHERE CantidadEnStock = (SELECT max(CantidadEnStock) FROM Productos)
+  OR CantidadEnStock = (SELECT min(CantidadEnStock) FROM Productos);
+
+select '7. Sacar la media de unidades en stock de los productos agrupados por gama'
+AS '-----------------------------------------------------------------';
+SELECT Gama, avg(CantidadEnStock) AS StockMedio
+FROM Productos
+GROUP BY Gama;
+
+select '8. Sacar los clientes que residan en ciudades donde no hay oficinas ordenado por la ciudad donde residen'
+AS '-----------------------------------------------------------------';
+SELECT DISTINCT NombreCliente, Ciudad
+FROM Clientes
+WHERE Ciudad NOT IN (SELECT Ciudad FROM Oficinas)
+ORDER BY Ciudad;
+
+select '9. Sacar un listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente AS Cliente, concat(Empleados.Nombre,' ',Empleados.Apellido1) AS Representante
+FROM Clientes, Empleados
+WHERE Clientes.CodigoEmpleadoRepVentas = Empleados.CodigoEmpleado;
+
+select '10. Mostrar el nombre de los clientes que no hayan realizado pagos junto con el nombre de su representante de ventas'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente AS Cliente, Empleados.Nombre AS Representante
+FROM Empleados, Clientes
+WHERE Clientes.CodigoEmpleadoRepVentas = Empleados.CodigoEmpleado
+  AND Clientes.CodigoCliente NOT IN (SELECT CodigoCliente FROM Pagos);
+
+select '11. Listar las ventas totales de los productos que hayan facturado más de 3000 euros. Se mostrará el nombre, unidades vendidas, total facturado y total facturado con impuestos (21% IVA)'
+AS '-----------------------------------------------------------------';
+SELECT Nombre AS Producto, sum(Cantidad) AS Unidades, sum(Cantidad*PrecioUnidad) AS Facturado, sum(Cantidad*PrecioUnidad)*1.21 AS 'Con impuestos'
+FROM Productos, DetallePedidos
+WHERE Productos.CodigoProducto = DetallePedidos.CodigoProducto
+GROUP BY DetallePedidos.CodigoProducto
+HAVING Facturado>3000;
+
+select '12. Listar la dirección de las oficinas que tengan clientes en Fuenlabrada'
+AS '-----------------------------------------------------------------';
+SELECT concat(LineaDireccion1,' ',LineaDireccion2,' ',Ciudad,' ',CodigoPostal,' ',Region,' ',Pais) AS 'Oficinas con clientes de Fuenlabrada'
+FROM Oficinas
+WHERE CodigoOficina IN (SELECT CodigoOficina
+                        FROM Empleados, Clientes
+                        WHERE Empleados.CodigoEmpleado = Clientes.CodigoEmpleadoRepVentas
+                          AND Clientes.Ciudad='Fuenlabrada');
+
+select '13. Sacar el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente AS Cliente, Empleados.Nombre AS Representante, Oficinas.Ciudad AS 'Ciudad Oficina'
+FROM Clientes, Empleados, Oficinas
+WHERE Clientes.CodigoEmpleadoRepVentas=Empleados.CodigoEmpleado
+  AND Empleados.CodigoOficina=Oficinas.CodigoOficina;
+
+select '14. Sacar la misma información que en la pregunta anterior pero sólo con los clientes que no hayan hecho pagos'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente AS Cliente, Empleados.Nombre AS Representante, Oficinas.Ciudad AS 'Ciudad Oficina'
+FROM Clientes, Empleados, Oficinas
+WHERE Clientes.CodigoEmpleadoRepVentas=Empleados.CodigoEmpleado
+  AND Empleados.CodigoOficina=Oficinas.CodigoOficina
+  AND Clientes.CodigoCliente NOT IN (SELECT CodigoCliente FROM Pagos);
+
+select '15. Obtener un listado con el nombre de los empleados junto con el nombre de sus jefes'
+AS '-----------------------------------------------------------------';
+SELECT Emp.Nombre AS Empleado, Jefes.Nombre AS Jefe
+FROM Empleados AS Emp, Empleados AS Jefes
+WHERE Emp.CodigoJefe = Jefes.CodigoEmpleado;
+
+select '16. Obtener el nombre de los clientes a los que no se les ha entregado a tiempo un pedido (FechaEntrega>FechaEsperada)'
+AS '-----------------------------------------------------------------';
+SELECT DISTINCT NombreCliente
+FROM Clientes
+WHERE CodigoCliente IN (SELECT CodigoCliente
+                      FROM Pedidos
+                      WHERE FechaEntrega>FechaEsperada);
+
+select '16. Alternativa con JOIN'
+AS '-----------------------------------------------------------------';
+SELECT DISTINCT Clientes.NombreCliente
+FROM Clientes NATURAL JOIN Pedidos
+WHERE FechaEntrega>FechaEsperada;
+
+
+#TABLAS DERIVADAS:
+
+#************************************************************************************
+select '17. Sacar el cliente que hizo el pedido de mayor cuantía'
+AS '-----------------------------------------------------------------';
+#resuelta en GARCETA
+#************************************************************************************
+
+#17.1 Primera parte: tabla con el importe de los pedidos
+#SELECT NombreCliente, CodigoPedido, sum(Cantidad*PrecioUnidad) as cuantia
+#FROM Clientes NATURAL JOIN Pedidos NATURAL JOIN DetallePedidos
+#GROUP BY CodigoPedido;
+
+#17.2 Segunda parte: nombre del cliente que hizo el pedido de mayor cuantía
+SELECT NombreCliente
+FROM (SELECT NombreCliente, CodigoPedido, sum(Cantidad*PrecioUnidad) as cuantia
+      FROM Clientes NATURAL JOIN Pedidos NATURAL JOIN DetallePedidos
+      GROUP BY CodigoPedido) AS T_cuantias
+WHERE cuantia = (SELECT max(cuantia)
+                 FROM (SELECT NombreCliente, CodigoPedido, sum(Cantidad*PrecioUnidad) as cuantia
+                       FROM Clientes NATURAL JOIN Pedidos NATURAL JOIN DetallePedidos
+                       GROUP BY CodigoPedido) AS T_cuantias);
+
+select '17. Solución alternativa con vistas'
+AS '-----------------------------------------------------------------';
+CREATE OR REPLACE VIEW V_cuantias (cliente, pedido, cuantia)
+	AS (SELECT NombreCliente, Pedidos.CodigoPedido, sum(Cantidad*PrecioUnidad)
+      	FROM Clientes, Pedidos, DetallePedidos
+	WHERE Clientes.CodigoCliente=Pedidos.CodigoCliente
+		AND Pedidos.CodigoPedido=DetallePedidos.CodigoPedido
+      	GROUP BY Pedidos.CodigoPedido);
+
+SELECT cliente
+FROM V_cuantias
+WHERE cuantia = (SELECT max(cuantia)
+                 FROM V_cuantias);
+
+
+select '17. Solución alternativa'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente
+FROM Clientes, Pedidos, DetallePedidos
+WHERE Clientes.CodigoCliente = Pedidos.CodigoCliente
+  AND Pedidos.CodigoPedido = DetallePedidos.CodigoPedido
+GROUP BY Pedidos.CodigoPedido
+ORDER BY sum(Cantidad*PrecioUnidad) DESC
+LIMIT 1;
+
+select '17. La solución alternativa si hacemos uso del NATURAL JOIN que, en este caso, es factible'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente
+FROM Clientes NATURAL JOIN Pedidos NATURAL JOIN DetallePedidos
+GROUP BY Pedidos.CodigoPedido
+ORDER BY sum(Cantidad*PrecioUnidad) DESC
+LIMIT 1;
+
+
+#************************************************************************************
+select '18. Sacar el importe medio de los pedidos'
+AS '-----------------------------------------------------------------';
+#************************************************************************************
+SELECT avg(Totales) AS ImporteMedio
+FROM (SELECT sum(Cantidad*PrecioUnidad) AS Totales
+      FROM DetallePedidos
+      GROUP BY CodigoPedido) AS TablaTotales;
+
+select '19. Sacar un listado de clientes indicando el nombre del cliente y cuántos pedidos ha realizado'
+AS '-----------------------------------------------------------------';
+SELECT NombreCliente, count(*) AS N_pedidos
+FROM Clientes, Pedidos
+WHERE Clientes.CodigoCliente = Pedidos.CodigoCliente
+GROUP BY Pedidos.CodigoCliente;
+
+select '20. Sacar un listado con los nombres de los clientes y el total pagado por cada uno de ellos'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente, sum(Cantidad) AS Total_pagado
+FROM Clientes, Pagos
+WHERE Clientes.CodigoCliente = Pagos.CodigoCliente
+GROUP by Clientes.NombreCliente;
+
+select '20. Alternativa con JOIN'
+AS '-----------------------------------------------------------------';
+SELECT NombreCliente, sum(cantidad) AS Total_pagado
+FROM Clientes NATURAL JOIN Pagos
+GROUP BY CodigoCliente;
+
+select '21. Sacar el nombre de los clientes que hayan hecho pedidos en 2008'
+AS '-----------------------------------------------------------------';
+SELECT DISTINCT NombreCliente
+FROM Clientes NATURAL JOIN Pedidos
+WHERE FechaPedido BETWEEN '2008-01-01' AND  '2008-12-31';
+
+select '22. Listar el nombre del cliente y el nombre y apellido de sus representantes de aquellos que no hayan realizado pagos'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente, concat(Empleados.Nombre,' ',Empleados.Apellido1) AS Representante
+FROM Clientes, Empleados
+WHERE Clientes.CodigoEmpleadoRepVentas=Empleados.CodigoEmpleado
+  AND Clientes.CodigoCliente NOT IN (SELECT CodigoCliente
+                                      FROM Pagos);
+
+select '23. Sacar un listado de clientes donde aparezca el nombre de su comercial y la ciudad donde está su oficina'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente, Empleados.Nombre AS comercial, Oficinas.Ciudad AS Ciudad_Oficina
+FROM Clientes, Empleados, Oficinas
+WHERE Clientes.CodigoEmpleadoRepVentas=Empleados.CodigoEmpleado
+  AND Empleados.CodigoOficina=Oficinas.CodigoOficina;
+
+select '24. Sacar el nombre, apellidos, oficina y cargo de aquellos que no sean representantes de ventas'
+AS '-----------------------------------------------------------------';
+SELECT concat(Nombre,' ', Apellido1,' ', Apellido2) AS Empleado, CodigoOficina AS Oficina, Puesto AS Cargo
+FROM Empleados
+WHERE Puesto!='Representante Ventas';
+
+select '25. Sacar cuantos empleados tiene cada oficina, mostrando el nombre de la ciudad donde está la oficina'
+AS '-----------------------------------------------------------------';
+SELECT Ciudad, count(*) AS N_empleados
+FROM Oficinas, Empleados
+WHERE Oficinas.CodigoOficina=Empleados.CodigoOficina
+GROUP BY Ciudad;
+
+select '26. Sacar los clientes que residan en la misma ciudad donde hay una oficina, indicando donde está la oficina'
+AS '-----------------------------------------------------------------';
+SELECT Clientes.NombreCliente, Clientes.Ciudad, concat(Oficinas.LineaDireccion1,' ',Oficinas.LineaDireccion2) AS Situacion
+FROM Clientes, Oficinas
+WHERE Clientes.Ciudad=Oficinas.Ciudad;
+
+select '27. Sacar el número de clientes que tiene asignado cada representante de ventas'
+AS '-----------------------------------------------------------------';
+SELECT Empleados.Nombre, count(*) AS n_clientes
+FROM Empleados, Clientes
+WHERE Empleados.CodigoEmpleado=Clientes.CodigoEmpleadoRepVentas
+GROUP BY CodigoEmpleado;
+
+select '28. Sacar cuál fue el cliente que hizo el pago con mayor cuantía y el que hizo el pago con menor cuantía'
+AS '-----------------------------------------------------------------';
+SELECT NombreCliente, Cantidad
+FROM Clientes NATURAL JOIN Pagos
+WHERE Cantidad = (SELECT max(cantidad)
+                  FROM Pagos)
+      OR Cantidad = (SELECT min(cantidad)
+                     FROM Pagos);
+select '29. Sacar un listado con el precio total de cada pedido'
+AS '-----------------------------------------------------------------';
+SELECT CodigoPedido, sum(cantidad*PrecioUnidad) as importe
+FROM Pedidos NATURAL JOIN DetallePedidos
+GROUP BY CodigoPedido;
+
+select '30. Sacar los clientes que hayan hecho pedidos en el 2008 por una cuantía superior a 2000 euros'
+AS '-----------------------------------------------------------------';
+SELECT DISTINCT NombreCliente
+FROM Clientes NATURAL JOIN Pedidos
+WHERE FechaPedido LIKE "2008%"
+      AND CodigoPedido IN (SELECT CodigoPedido
+                           FROM (SELECT CodigoPedido, sum(cantidad*PrecioUnidad) as importe
+                                 FROM Pedidos NATURAL JOIN DetallePedidos
+                                 GROUP BY CodigoPedido) AS T_Importes
+                           WHERE importe > 2000);
+
+select '30. Alternativas usando vistas'
+AS '-----------------------------------------------------------------';
+CREATE OR REPLACE VIEW PedidosClientes (CodPedido, Fecha, Estado, CodCliente, NomCliente, Coste) AS
+  (SELECT Pedidos.CodigoPedido, Pedidos.FechaPedido, Pedidos.Estado, Clientes.CodigoCliente, Clientes.NombreCliente, sum(Cantidad*PrecioUnidad)
+  FROM DetallePedidos, Pedidos, Clientes
+  WHERE DetallePedidos.CodigoPedido=Pedidos.CodigoPedido
+    AND Pedidos.CodigoCliente=Clientes.CodigoCliente
+  GROUP BY Pedidos.CodigoPedido);
+
+SELECT DISTINCT NomCliente FROM PedidosClientes
+WHERE Fecha BETWEEN '2008-01-01' AND '2008-12-31'
+  AND Coste>2000;
+
+select '31. Sacar cuantos pedidos tiene cada cliente en cada estado'
+AS '-----------------------------------------------------------------';
+#HEMOS USADO LA VISTA ANTERIOR
+SELECT NomCliente, Estado, count(*) AS n_pedidos
+FROM PedidosClientes
+GROUP BY NomCliente,Estado;
+
+select '32. Sacar los clientes que han pedido más de 200 unidades de cualquier producto'
+AS '-----------------------------------------------------------------';
+SELECT DISTINCT NombreCliente
+FROM Clientes NATURAL JOIN Pedidos NATURAL JOIN DetallePedidos
+WHERE Cantidad > 200;
+
+
+

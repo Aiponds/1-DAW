@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="op1">Operator 1:</string>
+    <string name="div0">You can not divide by zero.</string>
+    <string name="op2">Operator 2:</string>
+    <string name="resultado">Result:</string>
+    <string name="limpiar">Clear</string>
+    <string name="resul">0</string>
+</resources>

@@ -1,0 +1,9 @@
+6.- Indique el orden de evaluacion de los operadores en cada una de las siguientes instrucciones en
+Java, y muestre el valor de x despues de ejecutar cada una de ellas:
+a) x = 7 + 3 * 6 / 2 – 1;
+b) x = 2 % 2 + 2 * 2 – 2 / 2;
+c) x = (3 * 9 * (3 + (9 * 3 / (3))));
+
+a) Primero la multiplicación, luego la división, seguido la suma y la resta. -> 3*6, /2, 7+ y -1. x=15
+b) Primero el módulo, luego la multiplicación, luego la división y luego la suma y la resta de los resultados. -> 2%2, 2*2, 2/2. x=3
+c) Los paréntesis en orden del que está mas dentro hacia el que está mas fuera. x=324

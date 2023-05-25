@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras Listas Tablas</title>
+    <link rel="icon" href="https://preview.redd.it/v83c182e0ya81.jpg?auto=webp&s=408c9014971bae24c7f9300836eb6419db2389f8">
+    <style>
+        table,td {border: 1px solid black;}
+        img {width: 300px;height: 200px;}
+        td.rojo {background-color: red;}
+        td.verde {background-color: lime;}
+        hr {width: 50%;color: red;background-color: red;border: 5px solid red;}
+    </style>
+</head>
+<body>
+    <h1>LISTA ORDENADA con indice de NUMEROS ROMANOS en "minusucula" y comienza con 1</h1>
+    <ol type="i">
+        <li>Elemento uno</li>
+        <li>Elemento dos</li>
+        <li>
+            Elemento tres INSERTAR UNA TABLA.
+            <table>
+                <tr>
+                    <td class="verde">PRIMERA FILA PRIMERA COLUMNA</td>
+                    <td rowspan="3"><img src="https://preview.redd.it/v83c182e0ya81.jpg?auto=webp&s=408c9014971bae24c7f9300836eb6419db2389f8" alt=""></td>
+                    <td class="verde">PRIMERA FILA TERCERA COLUMNA</td>
+                </tr>
+                <tr>
+                    <td>SEGUNDA FILA CELDA 1</td>
+                    <td>SEGUNDA FILA CELDA 3</td>
+                </tr>
+                <tr>
+                    <td class="rojo">TERCERA FILA PRIMERA COLUMNA</td>
+                    <td class="rojo">TERCERA FILA TERCERA COLUMNA</td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            Elemento cuatro. INSERTO LISTA DESORDENADA CON CUADRITO
+            <ul type="square">
+                <li>Primer elemento de la lista desordenada</li>
+                <li>Segundo elemento de lista desordenada</li>
+            </ul>
+        </li>
+    </ol>
+    <h4>línea de color rojo alineada al centro y de tamaño 5 pixels, ocupa la mitad de la pantalla.</h4>
+    <hr>
+    <dl>
+        <dt>Coche
+            <dd>tiene cuatro ruedas</dd>
+        </dt>
+        <dt>Bicicleta
+            <dd>tiene dos ruedas</dd>
+        </dt>
+        <dt>Camion
+            <dd>tiene ocho ruedas</dd>
+        </dt>
+    </dl>
+    <h4>línea de color rojo alineada al centro y de tamaño 5 pixels, ocupa la mitad de la pantalla.</h4>
+    <hr>
+    <h4>LO SIGUIENTE ES UN TEXTO VISTO TAL COMO SE ESCRIBE</h4>
+    <pre>
+    //HTML//
+    ESCRIBIMOS TEXTO
+    -----------------
+    //HTML//
+    </pre>
+
+    
+</body>
+</html>

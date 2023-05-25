@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="op1">Operando 1:</string>
+    <string name="div0">No se puede dividir por cero.</string>
+    <string name="op2">Operando 2:</string>
+    <string name="resultado">Resultado:</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="resul">0</string>
+</resources>

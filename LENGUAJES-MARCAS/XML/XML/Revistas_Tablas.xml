@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<revistas xmlns:R="Revistas" xmlns:T="Tablas">
+  <R:titulo>Ejemplo de revista</R:titulo>
+  <T:tabla>
+    <T:fila>
+      <T:celda>
+        <R:autor>Juan</R:autor>
+        <R:precio>10</R:precio>
+        <R:paginas>100</R:paginas>
+        <R:fecha>01-01-2022</R:fecha>
+      </T:celda>
+      <T:celda>
+        <R:autor>Pedro</R:autor>
+        <R:precio>15</R:precio>
+        <R:paginas>200</R:paginas>
+        <R:fecha>01-02-2022</R:fecha>
+      </T:celda>
+    </T:fila>
+    <T:fila>
+      <T:celda>
+        <R:autor>Maria</R:autor>
+        <R:precio>20</R:precio>
+        <R:paginas>300</R:paginas>
+        <R:fecha>01-03-2022</R:fecha>
+      </T:celda>
+      <T:celda>
+        <R:autor>Lucia</R:autor>
+        <R:precio>25</R:precio>
+        <R:paginas>400</R:paginas>
+        <R:fecha>01-04-2022</R:fecha>
+      </T:celda>
+    </T:fila>
+  </T:tabla>
+</revistas>

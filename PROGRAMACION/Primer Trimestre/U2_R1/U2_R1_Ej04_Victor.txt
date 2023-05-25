@@ -1,0 +1,6 @@
+4.- Escriba instrucciones en Java que realicen cada una de las siguientes tareas:
+a) Mostrar el mensaje “Escriba un entero: “, dejando el cursor en la misma linea.
+b) Asignar el producto de las variables b y c a la variable a.
+
+a) System.out.print("Escriba un entero: ");
+b) a=b*c;

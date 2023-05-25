@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mensaje>
+    <remite nombre="Alfredo Reino" email="alf@ibium.com"></remite>
+    <destinatario nombre="Bill Clinton" email="president@whitehouse.gov"></destinatario>
+    <asunto>Hola Bill</asunto>
+    <texto parrafo="¿Hola qué tal?"></texto>
+</mensaje>

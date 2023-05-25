@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://ih1.redbubble.net/image.2768236876.9878/st,small,507x507-pad,600x600,f8f8f8.jpg">
+    <title>EnunciadosPantallazos 2 Victor</title>
+    <style>
+        body {background-color: lightyellow; border: 1px solid black;}
+        h5 {font-style: italic;}
+        form {background-color: white; width: 50% ; margin-left: auto; margin-right: auto;}
+        legend {color: #0000FF; font-weight: bold;}
+        input,textarea,select {width: 200px;}
+        fieldset {width: 70%;}
+        span input {width: fit-content;}
+    </style>
+</head>
+<body>
+    <h5>PRACTICA: Codifica el siguiente formulario:</h5>
+    <form action="">
+        <br><br>
+        <fieldset>
+            <legend>Datos de acceso</legend>
+            <label for="n-usuario">Nombre:</label><br>
+            <input type="text" name="n-usuario" id="n-usuario"><br>
+            <label for="p-usuario">Pass:</label><br>
+            <input type="password" name="p-usuario" id="p-usuario"><br>
+            <label for="details">Detalles:</label><br>
+            <textarea name="details" id="" cols="20" rows="3" placeholder="Detalle"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="ciudad">Ciudad de origen:</label><br>
+            <select name="ciudad" id="ciudad">
+                <option value="bcn">Barcelona</option>
+                <option value="trs">Terrassa</option>
+                <option value="sbd">Sabadell</option>
+            </select><br><br>
+            <label for="e-civil">Estado civil:</label><br>
+            <span>
+                <input type="radio" name="e-civil" id="e-civil">
+                <label for="casado">Casado</label><br>
+                <input type="radio" name="e-civil" id="e-civil" checked>
+                <label for="casado">Soltero</label><br>
+                <input type="radio" name="e-civil" id="e-civil">
+                <label for="casado">Divorciado</label><br><br>
+                <input type="checkbox" name="mayor" id="mayor">
+                <label for="mayor">Soy mayor de edad</label>
+            </span>
+        </fieldset>
+        <button type="submit">enviar</button>
+        <br><br><br>
+    </form>
+</body>
+</html>

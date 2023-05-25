@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/263/263100.png">
+    <title>Ejercicio 10 Victor</title>
+    <style>
+        p > a {color: green; font-size: 30px;}
+        p span {color: yellow; font-size: 30px;}
+        span a {color: red; background-color: black;}
+    </style>
+</head>
+<body>
+    <h4>Titulo: Color verde selector hijo p &lt; a</h4>
+    <p><a href="">Enlace del Parrafo en verde hijo directo</a></p>
+    <a href="">Enlace en azul link normal</a>
+    <h4>Titulo: Color rojo selector descendiente p span</h4>
+    <div><p>Este <span>Este párrafo esta dentro de un &lt;div&gt; y un &lt;span&gt; color amarillo</span></p></div>
+    <p>Esto es un texto del párrafo sin enlace</p>
+    <h4>Titulo: Color rojo selector nieto p* a</h4>
+    <p>Este parrafo es &lt;p&gt;<a href="">Enlace en link color verde hijo</a> <span><a href="">este ancla no es hijo directo por lo tanto tiene color rojo y fondo blanco</a> </span>
+    
+    
+</body>
+</html>

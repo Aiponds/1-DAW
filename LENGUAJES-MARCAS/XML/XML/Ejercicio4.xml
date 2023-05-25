@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+EJERCICIO 4. Pasar el anterior documento XML a elementos sin contenido, usando atributos.  
+-->
+<contactos>
+  <nombre>Maria</nombre>
+  <direccion calle="Calle San Anton 18" codigo-postal="13005" ciudad="Jaen"/>
+  <medios telefono-fijo="12340000" telefono-movil="4321000" correo-electronico="correo@electronico.com"/>
+</contactos>

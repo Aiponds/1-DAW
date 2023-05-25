@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lolpedia</title>
+    <link rel="stylesheet" href="./indice.css">
+    <script type="text/javascript" src="./javascript/cartas.js"></script>
+    <link rel="icon" href="./Imagenes/logo.png">
+    
+</head>
+<body>
+    <!--
+    La pagina está diseñada en un formato de pantalla 1920x1080. En una con mayor resolución se puede hacer zoom.
+    La pagina trata sobre un videojuego llamado League of Legends. He querido hacer una portada llamativa y un menu que te lleve a distintas partes de la pagina. Me llamó la atención hacer un integrado de una página con iframe
+    y por eso está en una sección aparte. Para el mapa he aprovechado e incluido un poco de JavaScript simple que tan solo oculta y muestra divs y les inserta contenido. El formulario tiene la gran mayoría de etiquetas que podrían
+    estar presentes en este tipo de formulario. La seccion de guias te lleva a un apartado con guías para cada rol del juego. El pie de página tiene enlaces a redes y un disclamer de copyright. La página de políticas está sacada de
+    la página oficial de Riot Games, autores del videojuego.
+    La bibliografía al pie de página contiene todas las fuentes de las cuales he conseguido inspiración y ayuda para realizar la página web.
+    -->
+    <a id="inicio"></a>
+    <!-- Inicio del menú, separando imagen del propio menú mediante divs. El logo vuelve al indice--> 
+    <header>
+        <div class="imagenLogo">
+            <figure>
+                <a href="./index.html">
+                    <img src="./Imagenes/logo.png" alt="Logo" class="formatoImagen">
+                </a>
+            </figure>
+        </div>
+        <div class="menu">
+            <ul>
+                <a href="./index.html#inicio">
+                    <li>Inicio</li>
+                </a>
+                <a href="./index.html#guias">
+                    <li>Guías</li>
+                </a>
+                <a href="./index.html#campeones">
+                    <li>Campeones</li>
+                </a>
+                <a href="./Paginas/coachingFormulario.html">
+                    <li>Coaching</li>
+                </a>
+                <a href="https://www.reddit.com/r/leagueoflegends/" target="_blank">
+                    <li>Foro</li>
+                </a>
+                <a href="./index.html#pie">
+                    <li>Contacto</li>
+                </a>
+            </ul>
+        </div>
+    </header>
+    <!-- Cuerpo del documento, primer article muestra portada de la página, con gif de fondo. Debajo cada seccion de la pagina, con un nav de título.-->
+    <main>
+        <article class="principal">
+            <section>
+                
+                <h1><span>¿QUÉ ES LEAGUE OF LEGENDS?</span> </h1>
+                <p>
+                    League of Legends es un juego de estrategia por equipos en el que dos equipos de cinco <br>
+                    campeones se enfrentan para ver quién destruye antes la base del otro. Elige de entre un <br>
+                    elenco de 140 campeones para realizar jugadas épicas, asesinar rivales y derribar torretas <br>
+                    para alzarte con la victoria.
+                </p>
+            </section>
+        </article>
+        <nav>
+            <h1><span>↓ INFORMACIÓN ↓ </span></h1>
+            <a id="guias"></a>
+        </nav>
+        <!-- Aside para acceder a todas las guías, estructurado con un table.-->
+        <aside>
+            <br><br><br>
+            <h1>Guías</h1>
+            <hr>
+            <br>
+            <table>
+                <tr>
+                    <td class="icono">
+                        <figure>
+                            <img src="./Imagenes/toplane.png" alt="" class="imagenTabla">
+                        </figure>
+                    </td>
+                    <td class="enlace"><a href="./Paginas/guiaTop.html">↦ Superior</a></td>
+                </tr>
+                <tr>
+                    <td class="icono">
+                        <figure>
+                            <img src="./Imagenes/jungla.png" alt="" class="imagenTabla">
+                        </figure>
+                    </td>
+                    <td class="enlace"><a href="./Paginas/guiaJungla.html">↦ Jungla</a></td>
+                </tr>
+                <tr>
+                    <td class="icono">
+                        <figure>
+                            <img src="./Imagenes/midlane.png" alt="" class="imagenTabla">
+                        </figure>
+                    </td>
+                    <td class="enlace"><a href="./Paginas/guiaMedio.html">↦ Medio</a></td>
+                </tr>
+                <tr>
+                    <td class="icono">
+                        <figure>
+                            <img src="./Imagenes/botlane.png" alt="" class="imagenTabla">
+                        </figure>
+                    </td>
+                    <td class="enlace"><a href="./Paginas/guiaInferior.html">↦ Inferior</a></td>
+                </tr>
+                <tr>
+                    <td class="icono">
+                        <figure>
+                            <img src="./Imagenes/support.png" alt="" class="imagenTabla">
+                        </figure>
+                    </td>
+                    <td class="enlace"><a href="./Paginas/guiaApoyo.html">↦ Apoyo</a></td>
+                </tr>
+            </table>
+        </aside>
+        <!-- Sección con mapa, al interactuar con el mapa utiliza javascript para ocultar div#ocultarEnClic y muestra #cartas añadiendole contenido en función de qué coordenadas clique.-->
+        <article>
+            <section class="centro">
+                <div id="ocultarEnClic">
+                    <h2>Haz clic en los iconos del mapa,</h2>
+                    <p>revelarán un campeón de <br> la posición elegida.</p>
+                </div>
+                <div id="cartas">
+                    <figure>
+                        <img src="" alt="" id="cartaImagen" class="cartaIcono">
+                     </figure>
+                    <figcaption id="cartaCaption"></figcaption>
+                    <p id="cartaLore"></p>
+                    <br>
+                    <p id="cartaRol"></p>
+                    <p id="cartaRegion"></p>
+                </div>
+                <!-- Div para el mapa, cada icono del mapa es interactuable.-->
+                <div class="mapa">
+                    <h1 >Mapa de League of Legends</h1>
+                    <figure>
+                        <img src="./Imagenes/mapa.png" usemap="#grieta" class="mapa">
+                        <map name="grieta">
+                            <area alt="top" title="top" coords="82,164,109,143,109,112,100,83,84,76,59,91,56,116,57,144" shape="poly" onclick="mostrarTop()">
+                            <area alt="jg" title="jg" coords="179,312,204,293,203,267,201,236,181,228,156,243,155,268,156,294" shape="poly" onclick="mostrarJg()">
+                            <area alt="mid" title="mid" coords="331,338,355,318,353,289,344,258,331,254,308,270,306,291,306,321" shape="poly" onclick="mostrarMid()">
+                            <area alt="adc" title="adc" coords="560,555,585,536,585,510,573,474,560,470,539,486,537,510,537,534" shape="poly" onclick="mostrarAdc()">
+                            <area alt="supp" title="supp" coords="612,541,642,519,640,487,634,458,615,447,593,459,587,487,588,514" shape="poly" onclick="mostrarSupp()">
+                        </map>
+                    </figure>
+                </div>
+            </section>
+        </article>
+        <nav>
+            <a id="campeones"></a>
+            <h1><span>↓ CAMPEONES ↓</span></h1>
+        </nav>
+        <!-- Sección que vincula una página web a este documento html, integrandola. Con una caja se esccala su contenido para que sea visible.-->
+        <article class="abajo">
+            <section>
+                <div id="caja-campeones">
+                    <iframe src="https://universe.leagueoflegends.com/es_ES/champions/" frameborder="1" id="escalado-contenido"></iframe>
+                </div>
+            </section>
+        </article>
+        <!-- Seccion que contiene multimedia -->
+        <nav>
+            <h1><span>↓ CLIPS ↓</span></h1>
+        </nav>
+        <article class="multimedia">
+            <section>
+                <div class="multimedia">
+                    <video width="100%" height="100%" controls>
+                        <source src="./Videos/sonrobots.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="audio">
+                    <h1>Ibai casteando "Son robots"</h1>
+                </div>
+                <div class="multimedia">
+                    <video width="100%" height="100%" controls>
+                        <source src="./Videos/elmillor.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!-- ELEMENTO PARA REPRODUCIR AUDIO EN LA PÁGINA DE FONDO. SOLO FUNCIONA SI SE INTERACTUA VARIAS VECES EN LA PÁGINA. -->
+                <div class="audio">
+                    <audio src="./Videos/audioFondo.mp3" autoplay loop id="musicaFondo">
+                        <p>Si estás leyendo esto, tu navegador no soporta el elemento audio.</p>
+                        <embed src="`./Videos/audioFondo.mp3" width="180" height="90" hidden="true" />
+                    </audio>
+                    <h1>Elmillor rageando compilación</h1>
+                </div>
+                <div class="multimedia">
+                    <video width="100%" height="100%" controls>
+                        <source src="./Videos/tyler1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="audio">
+                    <h1>El jugador de LoL más normal</h1>
+                </div>
+                
+            </section>
+        </article>
+    </main>
+    <!-- Pie de página, con las redes sociales, copyright inventado y bibliografía.-->
+    <footer>
+        <table>
+            <tr>
+                <td>
+                    <figure>
+                        <a href="https://www.youtube.com/channel/UCwpQSspQfo5AJHxKZkBRXQA" target="_blank"><img src="./Imagenes/youtube.png" alt="" class="piePagina"></a>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <a href="https://twitter.com/aiponds" target="_blank"><img src="./Imagenes/twitter.png" alt="" class="piePagina"></a>
+                    </figure>
+                </td>
+                <td>
+                    <figure>
+                        <a href="https://www.instagram.com/aiponds_/" target="_blank"><img src="./Imagenes/instagram.png" alt="" class="piePagina"></a>
+                    </figure>
+                </td>
+            </tr>
+        </table>
+            <a id="pie"></a>
+            <p>Autor: Victor Stala 1º Desarrollo de Aplicaciones Web</p>
+            <br>
+            <figure>
+               <a href="https://i.redd.it/xioo6xlfd6r91.jpg"><img src="./Imagenes/guillem.png" alt="" class="piePagina"></a>
+            </figure>
+            <p>© 2023-2023 Lolpedia no está respaldada por Riot Games ni League of Legends y no refleja la vista o opiniones de Riot Games o cualquiera oficialmente involucrado en producir o gestionar League of Legends. League of Legends y Riot Games son una marca o marcas oficiales de Riot Games, Inc. League of Legends © Riot Games, Inc.</p>
+            <p>Todo el contenido que se pueda encontrar en esta página está con fines educativos y no personales ni comerciales. Todos los derechos de las imagenes atribuidas a sus respectivos autores.</p>
+            <br>
+            <p>Bibliografía: W3docs, W3school, StackOverflow FreeCodeCamp y TutorialsPoint</p>
+    </footer>
+</body>
+</html>

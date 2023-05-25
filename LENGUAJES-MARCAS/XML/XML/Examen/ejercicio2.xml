@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Autor: Victor Stala
+2. Utiliza un XML Schema para comprobar que un documento XML es válido dada la siguiente
+estructura: un elemento principal representando una serie que contenga un título, una fecha de
+estreno, un número de temporadas representado por un valor entero con un valor mínimo de 1 y
+máximo de 50 y un género que elegir entre “comedia”, “drama” y “ciencia ficción”.-->
+<serie xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio2.xsd">
+    <titulo>Cyberpunk: Edgerunners</titulo>
+    <estreno>13 de septiembre de 2022</estreno>
+    <num_temporadas>1</num_temporadas>
+    <genero>Ciencia Ficción</genero>
+</serie>

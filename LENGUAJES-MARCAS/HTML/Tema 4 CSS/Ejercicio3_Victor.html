@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/263/263100.png">
+    <title>Tres selectores Victor</title>
+    <style>
+        p.rojo {color: red;}
+        div .magenta {color: magenta;}
+        p,h6, .azul {color: blue;}
+    </style>
+</head>
+<body>
+    <h4>Ejercicio 3.-</h4>
+    <p class="rojo">1.- Calse dentro de un párrafo, sin espacio entre los selectores Color de letra en rojo a todos los<br>elementos de tipo &lt;p&gt; con atributo class="rojo"</p>
+    <div><p>
+        2.-Selector descendiente, con espacio en blanco en medio de los selectores Color de letra en<br> magenta para todos los elementos con atributo class="magenta" que estén dentro de cualquier<br>elemento de tipo &lt;div&gt;
+        <div>Ahora estoy dentro de otro interno &lt;div&gt; y cambio el color <span class="magenta">a magenta</span></div><br><span class="azul"> vuelvo a escribir dentro del párrafo y cambio otra vez a </span><span class="magenta">color magenta</span>  
+    </p></div>
+    <p class="azul">3.-Combinación de selectores tipo y clase: Color de letra en azul para todos los elementos &lt;p&gt;<br>de la página y todos los elementos&lt;h6&gt;con el atributo class="azul" de esta página</p>
+    <h6>Este párrafo esta en azul</h6>
+    
+</body>
+</html>

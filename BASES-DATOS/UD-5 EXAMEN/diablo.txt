@@ -1,0 +1,23 @@
+EL USUARIO ES LA BASE DE DATOS
+-----------------------------------------------------
+➢ alter session set "_ORACLE_SCRIPT"=true;
+➢ create user paco identified by paco;
+➢ grant ALL PRIVILEGES to paco;
+➢ connect paco/paco;
+
+CAMBIOS QUE HAY QUE TENER EN CUENTA DE MYSQL A ORACLE
+-------------------------------------------------------
+➢ Oracle no admite la expresión IF [NOT] EXISTS en CREATE TABLE ni en DROP TABLE.
+➢ Nunca se usa la palabra AS para los alias de las tablas. Se separa con un espacio. 
+Sin embargo si es posible usar (o no) AS para los alias de columnas.
+➢ Nunca se usa la expresión ON UPDATE. Oracle siempre aplica la regla CASCADE
+en las actualizaciones. Si se quiere un comportamiento distinto en la actualización
+hay que implementarlo mediante triggers.
+➢ Nunca se usa la expresión ON DELETE RESTRICT. Oracle impide por defecto los
+borrados de registros referenciados. Si se desea un comportamiento distinto se puede
+usar SET NULL, SET DEFAULT o CASCADE.
+
+y más que hay que ver en el tema.
+
+PARA VISUAL STUDIO CODE
+si no conecta modificar C:\app\Victor\product\21c\homes\OraDB21Home1\network\admin listener.ora y tnsnames.ora y cambiar la ip/host por la ip actual

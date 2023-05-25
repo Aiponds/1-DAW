@@ -1,0 +1,56 @@
+#Ejercicio empresa.sql
+
+USE Empresa;
+
+DROP TABLE IF EXISTS Compras;
+DROP TABLE IF EXISTS Productos;
+DROP TABLE IF EXISTS Proveedores;
+DROP TABLE IF EXISTS Clientes;
+
+CREATE TABLE Clientes (
+	Dni char(9),
+	Nombre varchar(40),
+	Apellidos varchar(40),
+	Direccion varchar(40),
+	Fecha_nac date,
+	CONSTRAINT pk_clientes PRIMARY KEY (Dni)
+);
+
+CREATE TABLE Proveedores (
+	Nif char(9),
+	Nombre varchar(40),
+	Direccion varchar(40),
+	CONSTRAINT pk_proveedores PRIMARY KEY (Nif)
+);
+
+CREATE TABLE Productos (
+	Codigo char(5),
+	Nombre varchar(40),
+	Precio float,
+	Nif_proveedor char(9),
+	CONSTRAINT pk_productos PRIMARY KEY (Codigo),
+	CONSTRAINT fk_productosProveedor FOREIGN KEY (Nif_proveedor)
+		REFERENCES Proveedores (Nif)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+);
+
+CREATE TABLE Compras (
+	Dni_cliente char(9),
+	Codigo_producto char(5),
+	CONSTRAINT pk_compras PRIMARY KEY (Dni_cliente, Codigo_producto),
+	CONSTRAINT fk_comprasClientes FOREIGN KEY (Dni_cliente)
+		REFERENCES Clientes (Dni)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE,
+	CONSTRAINT fk_comprasProductos FOREIGN KEY (Codigo_producto)
+		REFERENCES Productos (Codigo)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+);		
+		
+	
+	
+	
+	
+	

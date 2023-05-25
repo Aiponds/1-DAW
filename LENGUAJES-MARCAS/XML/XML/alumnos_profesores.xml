@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asistentes xmlns:P="profesores" xmlns:A="alumnos">
+  <P:profesores>
+    <P:profesor>
+      <P:nombre>Profesor 1</P:nombre>
+    </P:profesor>
+    <P:profesor>
+      <P:nombre>Profesor 2</P:nombre>
+    </P:profesor>
+  </P:profesores>
+  <A:alumnos>
+    <A:alumno>
+      <nombre>Alumno 1</nombre>
+    </A:alumno>
+    <A:alumno>
+      <A:nombre>Alumno 2</A:nombre>
+    </A:alumno>
+  </A:alumnos>
+</asistentes>

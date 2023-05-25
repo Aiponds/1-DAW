@@ -1,0 +1,451 @@
+/* 
+Para estructurar la página en general.
+*/
+
+* {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(247, 241, 181);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding: 0px;
+    cursor: url(./Imagenes/cursor.cur),auto;
+    scroll-behavior: smooth;
+}
+main {
+    padding-top: 101px;
+}
+body {
+    text-align: center;
+    background-color: black;
+    position: relative;
+}
+h1 {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-size: 40px;
+}
+h2 {
+    font-size: 20px;
+}
+nav h1 {
+    padding-top: 25px;
+}
+span {
+    color: rgb(84, 71, 255);
+    font-weight: bold;
+    font-style: italic;
+}
+h1 > span {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 40px;
+}
+figcaption {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-style: italic;
+}
+img {
+    border: 1px solid black;
+}
+
+/* 
+Todos los elementos del menu vertical.
+Imagen y contenido separados, cajas alineadas a la derecha de la pantalla.
+*/
+
+header {
+    background-color: rgb(29, 29, 29);
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    border-bottom: 2px solid black;
+    z-index: 1;
+}
+div.imagenLogo {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+div.menu {
+    width: fit-content;
+    justify-content: right;
+    text-align: end;
+    margin: auto;
+    float: right;
+}
+header ul {
+    list-style-type: none;
+    display: inline-block;
+    align-items: center;
+}
+a li {
+    height: 50px;
+    width: 125px;
+    margin-right: 50px;
+    line-height: 90px;
+    text-align: center;
+    
+    display: inline-block;
+    position: relative;
+
+}
+.formatoImagen {
+    width: 75px;
+    height: 75px;
+    padding: 10px 0px 10px 10px;
+    border: none;
+}
+
+/* 
+Efecto hover para todos los enlaces de la página.
+*/
+
+li:hover, td > a:hover{
+        font-size: 20px;
+        color: rgb(84, 71, 255);
+        font-weight: bold;
+        font-style: italic;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+}
+
+/* 
+Estructura del nav, titular de secciones.
+*/
+
+nav {
+    width: 80.1%;
+    margin-left: 10.05%;
+    height: 100px;
+    background-color: rgb(29, 29, 29);
+    float: left;
+}
+
+/* 
+Estructura del aside y la tabla que contiene.
+*/
+
+aside {
+    width: 20%;
+    height: 800px;
+    background-color: rgb(29, 29, 29);
+    border: 1px solid black;
+    border-right: 0px;
+    float: left;
+    margin-left: 10%;
+}
+aside > table {
+    margin-left: 7%;
+    width: 85%;
+}
+td.icono {
+    width: 50px;
+}
+td.enlace {
+    width: 100px;
+    text-align: start;
+}
+aside > hr {
+    background-color: rgb(247, 241, 181);
+    border: 1px solid rgb(247, 241, 181);
+    width: 50%;
+    margin-left: 25%;
+}
+.imagenTabla {
+    width: 75px;
+    height: 100px;
+    border: none;
+}
+
+/* 
+Estructura del article, secciones de la página.
+*/
+
+article {
+    width: 60%;
+    height: 800px;
+    background-color: rgb(46, 46, 46);
+    border: 1px solid black;
+    float: left;
+}
+article.principal {
+    width: 80%;
+    height: 450px;
+    margin-left: 10%;
+    padding-top: 270px;
+    background-image: url(./Imagenes/body.gif);
+    background-size: 100%;
+    color: white;
+}
+article.abajo {
+    width: 80%;
+    margin-left: 10%;
+    height: fit-content;
+    float: left;
+}
+div.mapa {
+    float: right;
+    border: 0px;
+    margin-right: 25px;
+    height: 800px;
+    width: 66%;
+    overflow:visible;
+}
+#cartas { /* ETIQUETAS PARA DAR FORMATO A LAS CARTAS DE JAVASCRIPT*/ 
+    float: left;
+    display: none;
+    margin-left: 2%;
+    width: 29%;
+    height: 800px;
+    padding-top: 50px;
+}
+#ocultarEnClic {
+    float: left;
+    margin-left: 2%;
+    width: 29%;
+    height: 800px;
+    padding-top: 50px;
+    margin-top: 25%;
+}
+.cartaIcono {
+    width: 125px;
+    height: 125px;
+}
+.mapa {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+.centro {
+    text-align: center;
+}
+
+/* 
+Formato para la página incrustada.
+*/
+
+#caja-campeones {
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    float: left;
+}
+#escalado-contenido {
+    width: 1400px;
+    height: 1500px;
+    border: 0px;
+}
+
+/*
+ESTRUCTURA PARA MULTIMEDIA
+*/
+article.multimedia {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+    height: max-content;
+}
+div.multimedia {
+    width: 69%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+div.audio {
+    width: 20%;
+    float: right;
+    margin-top: 3%;
+    margin-right: 5%;
+}
+/* 
+Estructura del footer, tabla para estructurar redes.
+*/
+
+footer {
+    width: 100%;
+    height: 200px;
+    font-size: 5px;
+    background-color: rgb(29, 29, 29);
+    border: 1px solid black;
+    float: left;
+    bottom: 0;
+}
+footer > p, footer >figcaption {
+    font-size: 12px;
+    color: gray;
+}
+footer > table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    margin-top: 1%;
+}
+img.piePagina {
+    width: 50px;
+    height: 45px;
+    border: none;
+}
+
+/* 
+CONTENIDO DE LAS PAGINAS ADICIONALES, ESTRUCTURAR EL CONTENIDO.
+*/
+div.guiaIzq {
+    width: 45%;
+    float: left;
+    height: max-content;
+    padding-bottom: 20px;
+    margin-top: 3%;
+    margin-left: 3%;
+    text-align: start;
+}
+div.guiaIzq > p {
+    font-size: 35px;
+}
+div.guiaImgContenedor {
+    width: 45%;
+    float: right;
+    margin-right: 3%;
+    margin-bottom: 5%;
+}
+img.guiaImg {
+    width: 100%;
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+    height: fit-content;
+}
+ol.guia {
+    padding: 0px;
+    margin-left: 3%;
+}
+li.guia:hover {
+    text-decoration: none;
+    color: rgb(247, 241, 181);
+    font-style: normal;
+    font-weight: normal;
+}
+dt {
+    text-align: left;
+    color: rgb(84, 71, 255);
+}
+dd {
+    text-align: left;
+    padding-left: 30px;
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* 
+FORMATO PARA LA PAGINA DE POLITICAS
+*/
+
+div.politicas {
+    text-align: justify;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.politicas > h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: rgb(84, 71, 255);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+}
+div.politicas > h4 {
+    color: rgb(84, 71, 255);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+div.politicas * li:hover {
+    text-decoration: none;
+    color: rgb(247, 241, 181);
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* 
+ESTRUCTURA DEL FORMULARIO.
+*/
+article.coaching {
+    width: 80%;
+    margin-left: 10%;
+    height: fit-content;
+    float: left;
+    padding-bottom: 3%;
+}
+form {
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 90%;
+}
+fieldset {
+    background-color: rgba(137, 43, 226, 0.356);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 5px double black;
+}
+legend {
+    text-align: left;
+    
+    font-weight: bold;
+}
+section table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-bottom: 20px;
+}
+form table tr td {
+    border: 1px solid black;
+    text-align: start;
+    background-color: rgba(137, 43, 226, 0.356);
+}
+td.izq, th {
+    text-align:center;
+    width: 200px;
+    background-color: blueviolet;
+    border: 1px solid black;
+}
+td.izq2 {
+    background-color: blueviolet;
+}
+th, legend {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+td.der {
+    text-align: left;
+}
+td.botones {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: blueviolet;
+}
+input, select, option, textarea {
+    color: white;
+    border: 2px solid rgb(30, 37, 95);
+    background-color:  rgb(29, 29, 29);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 4px 10px 4px 10px;
+}
+input.largo {
+    width: 80%;
+}
+input.sinPadding {
+    padding: 0px;
+}
+label {
+    font-weight: bold;
+}
+label > a {
+    color: rgb(84, 71, 255);
+}

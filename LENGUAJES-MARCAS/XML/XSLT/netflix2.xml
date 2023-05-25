@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netflix>
+    <peliculas>
+        <pelicula>
+            <nombre>El padrino</nombre>
+            <director>Francis Ford Coppola</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El club de la pelea</nombre>
+            <director>David Fincher</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Forrest Gump</nombre>
+            <director>Robert Zemeckis</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Pulp Fiction</nombre>
+            <director>Quentin Tarantino</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Señor de los Anillos: La Comunidad del Anillo</nombre>
+            <director>Peter Jackson</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Padrino: Parte II</nombre>
+            <director>Francis Ford Coppola</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Caballero de la Noche</nombre>
+            <director>Christopher Nolan</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Rey León</nombre>
+            <director>Rob Minkoff, Roger Allers</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>La La Land</nombre>
+            <director>Damien Chazelle</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Señor de los Anillos: El Retorno del Rey</nombre>
+            <director>Peter Jackson</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Laberinto del Fauno</nombre>
+            <director>Guillermo del Toro</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Pianista</nombre>
+            <director>Roman Polanski</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Parásitos</nombre>
+            <director>Bong Joon-ho</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Gran Hotel Budapest</nombre>
+            <director>Wes Anderson</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Interstellar</nombre>
+            <director>Christopher Nolan</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Whiplash</nombre>
+            <director>Damien Chazelle</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>La forma del agua</nombre>
+            <director>Guillermo del Toro</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>La red social</nombre>
+            <director>David Fincher</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El renacido</nombre>
+            <director>Alejandro González Iñárritu</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>The Dark Knight</nombre>
+            <director>Christopher Nolan</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>El Cisne Negro</nombre>
+            <director>Darren Aronofsky</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Black Swan</nombre>
+            <director>Darren Aronofsky</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Ex Machina</nombre>
+            <director>Alex Garland</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>The Shawshank Redemption</nombre>
+            <director>Frank Darabont</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Interstella 5555: The 5tory of the 5ecret 5tar 5ystem</nombre>
+            <director>Leiji Matsumoto</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Kill bill</nombre>
+            <director>Quentin Tarantino</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>La tumba de las luciérnagas</nombre>
+            <director>Isao Takahata</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>La forma de la voz</nombre>
+            <director>Naoko Yamada</director>
+        </pelicula>
+    </peliculas>
+    <peliculas>
+        <pelicula>
+            <nombre>Se7en</nombre>
+            <director>David Fincher</director>
+        </pelicula>
+    </peliculas>
+    <series>
+        <serie>
+            <nombre larga="si">Breaking bad</nombre>
+            <año_estreno>Vince Gilligan</año_estreno>
+            <num_temporadas>5</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">Game of Thrones</nombre>
+            <año_estreno>David Benioff</año_estreno>
+            <num_temporadas>8</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">The Crown</nombre>
+            <año_estreno>Peter Morgan</año_estreno>
+            <num_temporadas>4</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">Stranger Things</nombre>
+            <año_estreno>Los Hermanos Duffer</año_estreno>
+            <num_temporadas>4</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">The Office</nombre>
+            <año_estreno>Greg Daniels</año_estreno>
+            <num_temporadas>9</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">Breaking Bad</nombre>
+            <año_estreno>Vince Gilligan</año_estreno>
+            <num_temporadas>5</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">Stranger Things</nombre>
+            <año_estreno>Los Hermanos Duffer</año_estreno>
+            <num_temporadas>3</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">Friends</nombre>
+            <año_estreno>David Crane, Marta Kauffman</año_estreno>
+            <num_temporadas>10</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">Narcos</nombre>
+            <año_estreno>Chris Brancato, Carlo Bernard, Doug Miro</año_estreno>
+            <num_temporadas>3</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">La Casa de Papel</nombre>
+            <año_estreno>Álex Pina</año_estreno>
+            <num_temporadas>5</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">The Mandalorian</nombre>
+            <año_estreno>Jon Favreau</año_estreno>
+            <num_temporadas>2</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">The Walking Dead</nombre>
+            <año_estreno>Frank Darabont</año_estreno>
+            <num_temporadas>11</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">The Boys</nombre>
+            <año_estreno>Eric Kripke</año_estreno>
+            <num_temporadas>3</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">The Handmaid's Tale</nombre>
+            <año_estreno>Reed Morano</año_estreno>
+            <num_temporadas>4</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">The Sopranos</nombre>
+            <año_estreno>David Chase</año_estreno>
+            <num_temporadas>6</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">Dark</nombre>
+            <año_estreno>Baran bo Odar</año_estreno>
+            <num_temporadas>3</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="si">Peaky Blinders</nombre>
+            <año_estreno>Steven Knight</año_estreno>
+            <num_temporadas>5</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">Hajime no Ippo</nombre>
+            <año_estreno>Satoshi Nishimura</año_estreno>
+            <num_temporadas>3</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">Fate/Zero</nombre>
+            <año_estreno>Yuki Kajiura</año_estreno>
+            <num_temporadas>2</num_temporadas>
+        </serie>
+    </series>
+    <series>
+        <serie>
+            <nombre larga="no">Persona 4: The Animation</nombre>
+            <año_estreno>Seiji Kishi</año_estreno>
+            <num_temporadas>1</num_temporadas>
+        </serie>
+    </series>
+    <documentales>
+        <documental>
+            <nombre>Planet Earth</nombre>
+            <director>Alastair Fothergill</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>The Social Dilemma</nombre>
+            <director>Jeff Orlowski</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>My Octopus Teacher</nombre>
+            <director>Pippa Ehrlich, James Reed</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>March of the Penguins</nombre>
+            <director>Luc Jacquet</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>The Last Dance</nombre>
+            <director>Jason Hehir</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Making a Murderer</nombre>
+            <director>Laura Ricciardi, Moira Demos</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Amy</nombre>
+            <director>Asif Kapadia</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Won't You Be My Neighbor?</nombre>
+            <director>Morgan Neville</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>The Act of Killing</nombre>
+            <director>Joshua Oppenheimer</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Blackfish</nombre>
+            <director>Gabriela Cowperthwaite</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>The Beatles: Eight Days a Week</nombre>
+            <director>Ron Howard</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>The Imposter</nombre>
+            <director>Bart Layton</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Jiro Dreams of Sushi</nombre>
+            <director>David Gelb</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Fyre: The Greatest Party That Never Happened</nombre>
+            <director>Chris Smith</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>The Cove</nombre>
+            <director>Louie Psihoyos</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>The Ivory Game</nombre>
+            <director>Kief Davidson</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>American Factory</nombre>
+            <director>Steven Bognar, Julia Reichert</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Free Solo</nombre>
+            <director>Elizabeth Chai Vasarhelyi, Jimmy Chin</director>
+        </documental>
+    </documentales>
+    <documentales>
+        <documental>
+            <nombre>Virunga</nombre>
+            <director>Orlando von Einsiedel</director>
+        </documental>
+    </documentales>
+</netflix>

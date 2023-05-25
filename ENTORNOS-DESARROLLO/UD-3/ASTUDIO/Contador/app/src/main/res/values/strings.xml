@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Contador</string>
+    <string name="txtInformacion">Haz clic en el botón de abajo</string>
+    <string name="textoClic">Clics:</string>
+</resources>

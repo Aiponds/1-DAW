@@ -1,0 +1,9 @@
+12.- .Que imprime el siguiente codigo?
+System.out.print(“*”);
+System.out.print(“***”);
+System.out.print(“*****”);
+System.out.print(“****”);
+System.out.println(“**”);
+
+->
+**************
